@@ -14,7 +14,16 @@ def main():
      
     # define a variable to control the main loop
     running = True
-     
+    
+	# Fill the background with white
+    screen.fill((255, 255, 255))
+
+    # Draw a solid blue circle in the center
+    pygame.draw.circle(screen, (0, 0, 255), (25, 25), 75)
+
+    # Update the window, because I guess that's not built-in
+    pygame.display.flip()
+	
     # main loop
     while running:
         # event handling, gets all event from the event queue
@@ -23,8 +32,8 @@ def main():
             if event.type == pygame.QUIT:
                 # change the value to False, to exit the main loop
                 running = False
-     
-     
+	 
+	 
 # run the main function only if this module is executed as the main script
 # (if you import this as a module then nothing is executed)
 if __name__=="__main__":
