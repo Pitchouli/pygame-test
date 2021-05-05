@@ -41,9 +41,15 @@ def main():
     while running:
         # event handling, gets all event from the event queue
         for event in pygame.event.get():
-            # only do something if the event is of type QUIT
-            if event.type == pygame.QUIT:
-                # change the value to False, to exit the main loop
+		    # Look at every event in the queue
+            # Did the user hit a key?
+            if event.type == KEYDOWN:
+            # Was it the Escape key? If so, stop the loop.
+                if event.key == K_ESCAPE:
+                    running = False
+
+        # Did the user click the window close button? If so, stop the loop.
+            elif event.type == QUIT:
                 running = False
 	 
 	 
