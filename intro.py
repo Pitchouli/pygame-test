@@ -29,6 +29,20 @@ def main():
     
 	# Fill the background with white
     screen.fill((255, 255, 255))
+	
+    # Create a surface; parameters (length, width)
+    surf = pygame.Surface((50, 50))
+	
+	# Put the center of surf at the center of the display
+    surf_center = ((SCREEN_WIDTH-surf.get_width())/2,(SCREEN_HEIGHT-surf.get_height())/2)
+
+    # Draw surf at the new coordinates
+    screen.blit(surf, surf_center)
+    pygame.display.flip()
+
+    # Give the surface a color to separate it from the background
+    surf.fill((0, 0, 0))
+    # to get the rectangle itself, use 'rect = surf.get_rect()'
 
     # Draw a solid blue circle in the center
 	# Parameters: surface, color, center point, radius
