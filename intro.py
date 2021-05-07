@@ -13,6 +13,15 @@ from pygame.locals import (
     QUIT,
 )
 
+# Define a Player object by extending pygame.sprite.Sprite
+# The surface drawn on the screen is now an attribute of 'player'
+class Player(pygame.sprite.Sprite):
+    def __init__(self):
+        super(Player, self).__init__()
+        self.surf = pygame.Surface((75, 25))
+        self.surf.fill((255, 255, 255))
+        self.rect = self.surf.get_rect()
+
 # define a main function
 def main():
      
@@ -37,7 +46,7 @@ def main():
     surf_center = ((SCREEN_WIDTH-surf.get_width())/2,(SCREEN_HEIGHT-surf.get_height())/2)
 
     # Draw surf at the new coordinates
-    screen.blit(surf, surf_center)
+    screen.blit(player.surf, player.rect)
     pygame.display.flip()
 
     # Give the surface a color to separate it from the background
